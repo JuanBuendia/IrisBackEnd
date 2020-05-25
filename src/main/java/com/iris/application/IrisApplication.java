@@ -1,4 +1,4 @@
-package com.iris.instituto;
+package com.iris.application;
 
 import java.util.Collections;
 import org.springframework.boot.SpringApplication;
@@ -11,11 +11,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan(basePackages = "com.iris")
 @EntityScan("com.iris.entities")
 @EnableJpaRepositories("com.iris.repositories")
-public class InstitutoApplication {
+public class IrisApplication {
 
     public static void main(String[] args) {
 
-        SpringApplication app = new SpringApplication(InstitutoApplication.class);
+        SpringApplication app = new SpringApplication(IrisApplication.class);
         app.setDefaultProperties(Collections.singletonMap("server.port", "8085"));
          app.run(args);
     }
