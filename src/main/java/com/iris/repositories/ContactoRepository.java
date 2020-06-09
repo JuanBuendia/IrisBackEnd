@@ -19,4 +19,12 @@ public interface ContactoRepository extends CrudRepository<Contacto, Integer> {
 	@Query(value = "SELECT NOMBRES, APELLIDOS, DATE_PART('YEAR', AGE(FECHA_NACIMIENTO)) AS EDAD "
 			+ "FROM CONTACTOS WHERE DOCUMENTO = ?1", nativeQuery = true)
 	Contacto findByDocumento(String documento);
+	
+	@Query(value = "SELECT NOMBRES, APELLIDOS, DATE_PART('YEAR', AGE(FECHA_NACIMIENTO)) AS EDAD "
+			+ "FROM CONTACTOS WHERE NOMBRES = ?1", nativeQuery = true)
+	ArrayList<Contacto> findByName(String Nombre);
+	
+	@Query(value = "SELECT NOMBRES, APELLIDOS, DATE_PART('YEAR', AGE(FECHA_NACIMIENTO)) AS EDAD "
+			+ "FROM CONTACTOS WHERE APELLIDOS = ?1", nativeQuery = true)
+	ArrayList<Contacto> findByLastName(String Nombre);
 }
