@@ -26,5 +26,5 @@ public interface ContactoRepository extends CrudRepository<Contacto, Integer> {
 	
 	@Query(value = "SELECT NOMBRES, APELLIDOS, DATE_PART('YEAR', AGE(FECHA_NACIMIENTO)) AS EDAD "
 			+ "FROM CONTACTOS WHERE APELLIDOS = ?1", nativeQuery = true)
-	ArrayList<Contacto> findByLastName(String Nombre);
+	ArrayList<Contacto> findByLastName(String Apellidos);
 }
