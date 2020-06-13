@@ -31,4 +31,22 @@ public class ContactoService {
     public void save(Contacto persona) {
         contactoRepository.save(persona);
     }
+    
+    //TODO manejar error por diferencias de parametros
+    
+    public ArrayList<Contacto> getListPatients(){
+    	return contactoRepository.getListPatients();
+    }
+    
+    public Contacto findByDocumento(String documento) {
+    	return contactoRepository.findByDocumento(documento);
+    }
+    
+    public ArrayList<Contacto> findByName(String nombre) {
+    	return contactoRepository.findByName(nombre);
+    }
+    
+    public ArrayList<Contacto> findByLastName(String apellidos) {
+    	return contactoRepository.findByLastName(apellidos);
+    }
 }
